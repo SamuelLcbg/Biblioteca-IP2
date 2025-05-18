@@ -9,14 +9,6 @@ public class Cliente {
     String Telefone;
     String Email;
 
-    public Cliente(){
-        this.Nome = "defaultNome";
-        this.Cpf = "defaultCPF";
-        this.Endereco = "defaultEndereco";
-        this.Telefone = "defaultTelefone";
-        this.Email = "defaultEmail";
-
-    }
 
     public Cliente(String nome, String cpf, String telefone, String endereco, String email) {
         this.Nome = nome;
@@ -68,13 +60,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "Nome='" + Nome + '\'' +
-                ", Cpf='" + Cpf + '\'' +
-                ", Endereco='" + Endereco + '\'' +
-                ", Telefone='" + Telefone + '\'' +
-                ", Email='" + Email + '\'' +
-                '}';
+        return "Cliente: " + this.getNome() + "\nCPF: " + this.getCpf() + "\nTelefone: " + this.getTelefone() + "\nEndereço: " + this.getEndereco() + "\nEmail: " + this.getEmail();
     }
 
     @Override

@@ -1,34 +1,35 @@
 package ClassesBasicas;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Emprestimo {
+    int numero;
     LocalDate DataEmprestimo;
     LocalDate DataDevolucao;
-    Class Cliente;
-    Class Livro;
+    Cliente cliente;
+    Livro livro;
 
-    public Emprestimo() {
-        this.DataEmprestimo = LocalDate.parse("defaultDataEmp");
-        this.DataDevolucao = LocalDate.parse("defaultDataDev");
-        this.Cliente = "defaultCliente".getClass();
-        this.Livro = "defaultLivro".getClass();
-    }
 
-    public Emprestimo(LocalDate DataEmprestimo, LocalDate DataDevolucao,Class Cliente, Class Livro){
+    public Emprestimo(int numero, LocalDate DataEmprestimo, LocalDate DataDevolucao,Cliente cliente, Livro livro){
+        this.numero = numero;
         this.DataEmprestimo = DataEmprestimo;
         this.DataDevolucao = DataDevolucao;
-        this.Cliente = Cliente;
-        this.Livro = Livro;
+        this.cliente = cliente;
+        this.livro = livro;
     }
+
+    public int getNumero() {return numero;}
+
+    public void setNumero(int numero) {this.numero = numero;}
 
     public LocalDate getDataEmprestimo() {
         return DataEmprestimo;
     }
 
     public void setDataEmprestimo(LocalDate dataEmprestimo) {
-        DataEmprestimo = dataEmprestimo;
+        this.DataEmprestimo = dataEmprestimo;
     }
 
     public LocalDate getDataDevolucao() {
@@ -36,33 +37,35 @@ public class Emprestimo {
     }
 
     public void setDataDevolucao(LocalDate dataDevolucao) {
-        DataDevolucao = dataDevolucao;
+        this.DataDevolucao = dataDevolucao;
     }
 
-    public Class getCliente() {
-        return Cliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setCliente(Class cliente) {
-        Cliente = cliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public Class getLivro() {
-        return Livro;
+    public Livro getLivro() {
+        return livro;
     }
 
-    public void setLivro(Class livro) {
-        Livro = livro;
+    public void setLivro(Livro livro) {
+        this.livro = livro;
     }
 
     @Override
     public String toString() {
-        return "Emprestimo{" +
-                "DataEmprestimo=" + DataEmprestimo +
-                ", DataDevolucao=" + DataDevolucao +
-                ", Cliente=" + Cliente +
-                ", Livro=" + Livro +
-                '}';
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String resultado = "\nEmprestimo numero " + this.numero + ": \n\n";
+        resultado += "-Dados do cliente --> \n\n" + this.cliente.toString();
+        resultado += "\n\n- Livro emprestado --> \n\n" + this.livro.toString();
+        resultado += " \n\nData de emprestimo: " + this.DataEmprestimo.format(formatter);
+        resultado += " \nData de devolução: " + this.DataDevolucao.format(formatter);
+
+        return resultado;
     }
 
     @Override

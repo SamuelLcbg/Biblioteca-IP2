@@ -11,6 +11,7 @@ public class Livro {
     int anoLancamento;
     boolean disponivel;
 
+
     public Livro(){
         this.Titulo = "defaultTitulo";
         this.Autor = "defaultAutor";
@@ -20,6 +21,7 @@ public class Livro {
         this.anoLancamento = 0;
         this.disponivel = false;
     }
+
 
     public Livro(String Titulo, String Autor, String Categoria, String ISBN, int qtdDisponivel, int anoLancamento, boolean disponivel) {
         this.Titulo = Titulo;
@@ -90,15 +92,7 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Livro{" +
-                "Titulo='" + Titulo + '\'' +
-                ", Autor='" + Autor + '\'' +
-                ", Categoria='" + Categoria + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", qtdDisponivel=" + qtdDisponivel +
-                ", anoLancamento=" + anoLancamento +
-                ", disponivel=" + disponivel +
-                '}';
+        return "Titulo: " + this.Titulo + "\nAutor: " + this.Autor + "\nCategoria: " + this.Categoria + "\nISBN: " + this.ISBN + "\nqtd Disponivel: " + this.qtdDisponivel + "\nAno de lançamento: "  + this.anoLancamento + "\nDisponibilidade: " + this.disponivel;
     }
 
 
