@@ -16,7 +16,11 @@ public class Main {
         System.out.println(livroDefault.getAutor());
 
         Livro livroNovo = new Livro("1984", "Fulano de tal", "Ficção Científica", "45678", 5, 1950, true);
+
+        //comparando livros ->
         System.out.println(livroNovo.equals(livroDefault));
+
+        //mudando o nome do autor->
         livroDefault.setAutor("Fulano de tal");
         System.out.println(livroDefault.getAutor());
 

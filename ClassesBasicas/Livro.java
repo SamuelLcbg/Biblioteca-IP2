@@ -92,7 +92,13 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Titulo: " + this.Titulo + "\nAutor: " + this.Autor + "\nCategoria: " + this.Categoria + "\nISBN: " + this.ISBN + "\nqtd Disponivel: " + this.qtdDisponivel + "\nAno de lançamento: "  + this.anoLancamento + "\nDisponibilidade: " + this.disponivel;
+        return "Titulo: " + this.Titulo +
+                "\nAutor: " + this.Autor +
+                "\nCategoria: " + this.Categoria +
+                "\nISBN: " + this.ISBN +
+                "\nqtd Disponivel: " + this.qtdDisponivel +
+                "\nAno de lançamento: "  + this.anoLancamento +
+                "\nDisponibilidade: " + this.disponivel;
     }
 
 
